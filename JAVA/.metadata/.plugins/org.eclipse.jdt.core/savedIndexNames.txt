@@ -1,0 +1,21 @@
+INDEX VERSION 1.134+/home/alessandrozappatore/Desktop/PARADIGMI/JAVA/.metadata/.plugins/org.eclipse.jdt.core
+732598907.index
+2667414480.index
+2728325689.index
+2147835167.index
+1521029764.index
+1366098370.index
+63499273.index
+227074474.index
+1144264236.index
+327395163.index
+640354345.index
+2867343213.index
+4104243387.index
+870969433.index
+2029721284.index
+705787879.index
+1894546769.index
+1566631150.index
+1865797976.index
+2409845826.index

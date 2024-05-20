@@ -1,0 +1,7 @@
+spazzolino,1,2.0,Igiene personale
+dentifricio,1,1.5,Igiene personale
+pigiama,1,15.0,Abbigliamento
+maglietta,5,10.0,Abbigliamento
+pantalone,3,20.0,Abbigliamento
+calzini,5,3.0,Abbigliamento
+carta d'identità,1,22.21,Documenti

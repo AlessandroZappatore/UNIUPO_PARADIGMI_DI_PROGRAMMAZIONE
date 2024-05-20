@@ -1,0 +1,5 @@
+package upo.graph.impl;
+
+public class GraphVertexMapping {
+
+}

@@ -1,0 +1,16 @@
+package upo.graph.impl;
+
+import java.util.List;
+
+import upo.graph.base.Vertex;
+
+public class GraphVertexMapping {
+	
+	private List<Vertex> vertexList;
+
+	public GraphVertexMapping(List<Vertex> vertexList) {
+		this.vertexList = vertexList;
+	}
+	
+	
+}

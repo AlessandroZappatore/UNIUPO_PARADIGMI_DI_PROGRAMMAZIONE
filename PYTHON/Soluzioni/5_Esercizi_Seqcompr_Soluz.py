@@ -1,0 +1,131 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct 25 08:16:47 2019
+
+@author: Paola
+"""
+
+#%%
+
+# crea una lista da 3 a 81 con tutti i numeri divisibili per 3
+[x for x in range(3,82) if x % 3 == 0]
+
+#%%
+# crea una lista con il cubo dei numeri da 1 a 20 inclusi
+[x**3 for x in range(1,21)]
+
+#%%
+# crea una lista con il cubo dei numeri divisibili per 4 da 1 a 20 inclusi
+[x**3 for x in range(1,21) if x % 4 == 0]
+
+#%%
+# crea una lista con tutti i cubi divisibili per 4 dei numeri da 1 a 20 inclusi
+[x**3 for x in range(1,21) if x**3 % 4 == 0]
+
+#%%
+# scrivi una funziona exps1 che accetta 3 parametri:
+#  1. esponente
+#  2. limite
+#  3. base
+# e ritorna una lista con tutti i numeri da 1 al limite (inclusi) che
+# sono divisibili per la base elevata all'esponente
+# exps1(1,10,2) =>[2, 4, 6, 8, 10]
+
+def exps1(exp,lim,base):
+    return [x for x in range(1,lim+1) if x%(base**exp)==0]
+
+
+#%%    
+# scrivi una funziona exps2 che accetta 3 parametri:
+#  1. esponente
+#  2. limite
+#  3. base
+# e ritorna una lista con tutti i numeri da 1 al limite (inclusi) 
+# elevati all'esponente, se questo e' divisibile per la base
+# exps2(2,10,1) => [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+def exps2(exp,lim,base):
+    return [x**exp for x in range(1,lim+1) if exp%base==0]
+
+
+#%% 
+# scrivi una funzione areEq che accetta gli stessi parametri di exps1 e exps2
+# e ritorna True se e solo se exps1 e exps2 applicate a questi
+# parametri ritornano liste uguali
+
+def areEq(exp,lim,base):
+    return exps1(exp,lim,base)==exps2(exp,lim,base)  
+
+#%% 
+# scrivi un'espressione che chiama la funzione areEq con exp 
+# da 2 a 9 (inclusi), base da 2 a 9, e limit 30 e ritorna una lista di
+# tuple (exp,base) per tutti le coppie exp, base per cui areEq ritorna False.           
+
+def expBase():
+    return [(exp,base) for exp in range(2,10) for base in range(2,10) 
+            if not(areEq(exp,30,base))]
+
+# expBase() =>
+# [(2, 2),
+# (2, 3),
+# (2, 4),
+# (2, 5),
+# (3, 2),
+# (3, 3),
+# (4, 2),
+# (4, 4),
+# (5, 5),
+# (6, 2),
+# (6, 3),
+# (6, 6),
+# (7, 7),
+# (8, 2),
+# (8, 4),
+# (8, 8),
+# (9, 3),
+# (9, 9)]
+   
+    
+#%% 
+# Rifai l'esercizio che segue usando la Comprehension
+# Assumendo che una tripla (stringa, booleano, lista persone) rappresenti una
+# persona (nome,sesso, lista dei figli) con Donna associata True e Uomo a False
+# ad esempio:
+
+paola =("Paola", True,[])
+andrea =("Andrea", True,[paola])
+peter =("Peter", False,[])
+giulia =("Giulia", True, [paola, peter])
+persone = [paola, peter, giulia]
+
+# 1) la lista delle persone il cui nome inizia con “P”
+def f1(persone, c):
+    return [x for x in persone if x[0].startswith(c)]
+
+# 2) la lista delle coppie (nome madre, nome figlia/o)
+def madreFiglix1(persone):
+    return [(x[0],y[0]) for x in persone for y in x[2] if (x[1] and x[2])]
+
+def  madreFiglix2(persone):
+    return [(p[0], f[0]) for p in persone if(p[1]) for f in p[2]]
+
+
+#%% 
+# Riscrivi la funzione righeColonne che prende in input una lista 
+# di stringhe [r1,...,rn] tutte della stessa lunghezza m, e ritorna 
+# la lista di stringhe [c1,...,cm] dove  ci=r1[i]r2[i]....rn[i]
+# usando al Comprehension.
+ls=['oiatonissac',
+ 'linnareivab',
+ 'asgvariosto',
+ 'neegcorsica',
+ 'drlhaioarri',
+ 'eairellimac',
+ 'socragaaams',
+ 'iioceogvgoa',
+ 'rmsroncalli',
+ 'aaitaeeeiac',
+ 'paocificaps'] 
+    
+def righeColonne(lista):
+    return [''.join(x) for x in zip(*lista)]    

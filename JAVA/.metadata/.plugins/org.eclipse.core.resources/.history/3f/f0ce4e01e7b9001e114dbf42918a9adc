@@ -1,0 +1,150 @@
+package codice;
+
+import eccezioni.articoloException;
+
+/**
+ * @author Alessandro Zappatore matricola:20050889
+ */
+public class articolo {
+	private final static String DEFAULT_CATEGORY = "Non categorizzati";
+	private final static int DEFAULT_QTY = 1;
+
+	private final String nome;
+	private int qty;
+	private String categoria;
+	private double costo;
+	/**
+	 * Costruttore della classe articolo.
+	 * 
+	 * Controlla che la categoria sia contentua nell'arrayList di categoria della classe gestioneListe
+	 * 
+	 * @param nome il nome dell'articolo
+	 * @param qty la quantita' di articoli
+	 * @param costo il costo dell'articolo
+	 * @param categoria la categoria dell'articolo
+	 * 
+	 * @exception articoloException viene generata quando la categoria non &egrave; presente nelle categorie esistenti.
+	 */
+	public articolo(String nome, int qty, double costo, String categoria) throws articoloException {
+		this.nome = nome;
+		this.qty = qty;
+		this.costo = costo;
+		if (!gestioneListe.getCategorie().contains(categoria)) {
+			throw new articoloException("Categoria non presente");
+		} else {
+			this.categoria = categoria;
+		}
+	}
+	/**
+	 * Lo scopo del metodo toString &egrave; quello di poter stampare il contenuto di ogni articolo in un certo formato.
+	 * 
+	 * @return Restituisce una String contentente le informazioni dell'articolo
+	 */
+	public String toString() {		
+		StringBuilder sb = new StringBuilder();
+		sb.append("Nome: ").append(nome).append("\t");
+		sb.append("Quantita': ").append(qty).append("\t");
+		sb.append("Costo: ").append(costo).append("\t");
+		sb.append("Categoria: ").append(categoria).append("\n");
+		return sb.toString();
+	}
+	/**
+	 * Costruttore della classe articolo nel caso manchino quantita' e categoria.
+	 * 
+	 * Invoca il costruttore con i paramentri nome, DEFAULT_QTY (1), costo, DEFAULT_CATEGORY ("Non categorizzati")
+	 * 
+	 * @param nome il nome dell'articolo
+	 * @param costo il costo dell'articolo
+	 * 
+	 */
+	public articolo(String nome, double costo) throws articoloException {
+		this(nome, DEFAULT_QTY, costo, DEFAULT_CATEGORY);
+	}
+	/**
+	 * Costruttore della classe articolo nel caso manchi la categoria.
+	 * 
+	 * Invoca il costruttore con i paramentri nome, qty, costo, DEFAULT_CATEGORY ("Non categorizzati")
+	 * 
+	 * @param nome il nome dell'articolo
+	 * @param qty la quantita' di articoli
+	 * @param costo il costo dell'articolo
+	 */
+	public articolo(String nome, int qty, double costo) throws articoloException {
+		this(nome, qty, costo, DEFAULT_CATEGORY);
+	}
+	/**
+	 * Costruttore della classe articolo nel caso manchi la categoria.
+	 * 
+	 * Invoca il costruttore con i paramentri nome, DEFAULT_CATEGORY (1), costo, categoria
+	 * 
+	 * @param nome il nome dell'articolo
+	 * @param costo il costo dell'articolo
+	 * @param categoria la categoria dell'articolo
+	 */
+	public articolo(String nome, double costo, String categoria) throws articoloException {
+		this(nome, DEFAULT_QTY, costo, categoria);
+	}
+
+	/**
+	 * Lo scopo del metodo getNome &egrave; quello di restituire il nome dell'articolo.
+	 * 
+	 * @return Restituisce una stringa con il nome dell'articolo
+	 */
+	public String getNome() {
+		return nome;
+	}
+	/**
+	 * Lo scopo del metodo getQty &egrave; quello di restituire la quantita' dell'articolo.
+	 * 
+	 * @return Restituisce un'intero corrispondente alla quantita' di articoli
+	 */
+	public int getQty() {
+		return qty;
+	}
+	/**
+	 * Lo scopo del metodo setQty &egrave; quello di modificare la quantita' dell'articolo.
+	 * 
+	 */
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+	/**
+	 * Lo scopo del metodo getCategoria &egrave; quello di restituire la categoria dell'articolo.
+	 * 
+	 * @return Restituisce una stringa con la cateogria dell'articolo
+	 */
+	public String getCategoria() {
+		return categoria;
+	}
+	/**
+	 * Lo scopo del metodo setQty &egrave; quello di modificare la categoria dell'articolo.
+	 * 
+	 * Controlla se la categoria è presente nelle categorie esistenti
+	 * @param categoria la nuova categoria dell'articolo
+	 * @throws articoloException viene generata nel caso in cui la categoria non dovesse esistere
+	 */
+	public void setCategoria(String categoria) throws articoloException {
+		if (!gestioneListe.getCategorie().contains(categoria)) {
+			throw new articoloException("Categoria non presente");
+		} else {
+			this.categoria = categoria;
+		}
+	}
+	/**
+	 * Lo scopo del metodo getCosto &egrave; quello di restituire il costo dell'articolo.
+	 * 
+	 * @return Restituisce una stringa con il costo dell'articolo
+	 */
+	public double getCosto() {
+		return costo;
+	}
+	/**
+	 * Lo scopo del metodo setCosto &egrave; quello di modificare il costo dell'articolo.
+	 * 
+	 * @param costo il nuovo costo dell'articolo
+	 * 
+	 */
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
+}
