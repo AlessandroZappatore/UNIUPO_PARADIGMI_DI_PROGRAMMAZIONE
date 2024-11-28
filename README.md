@@ -22,7 +22,7 @@ In questa repository sono raccolti tutti gli **esercizi pratici** svolti durante
 
 ## 📘 **Programma del Corso**
 
-### Parte 1: **Java**
+### ♨️ Parte 1: **Java**
 1. **Introduzione a Java**: concetti di base del linguaggio e struttura delle applicazioni  
 2. **Oggetti e Classi**: creazione e gestione di oggetti, classi e metodi  
 3. **Tipi fondamentali**: gestione dei tipi primitivi, array e strutture sintattiche  
@@ -39,7 +39,7 @@ In questa repository sono raccolti tutti gli **esercizi pratici** svolti durante
 
 ---
 
-### Parte 2: **Python**
+### 🐍 Parte 2: **Python**
 1. **Introduzione alla programmazione funzionale in Python**: concetti di base della programmazione funzionale  
 2. **Funzioni come valori**: utilizzo delle funzioni come oggetti di prima classe  
 3. **Funzioni di ordine superiore**: concetti avanzati di funzionalità in Python  
